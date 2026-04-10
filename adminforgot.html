@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Forgot Password</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="auth-box">
+    <h1>Admin Forgot Password</h1>
+    <div id="errorMsg" class="error"></div>
+    <div id="infoMsg" class="info"></div>
+    <form id="adminForgotForm">
+      <input type="text" id="usernameOrEmail" placeholder="Username or Email" required />
+      <button class="danger-btn" type="submit">Send Reset Code</button>
+    </form>
+    <div id="resetSection" style="display:none;">
+      <input type="text" id="resetCode" placeholder="Reset Code" required />
+      <input type="password" id="newPassword" placeholder="New Password" required />
+      <input type="password" id="confirmPassword" placeholder="Confirm Password" required />
+      <button class="danger-btn" id="resetPasswordBtn">Reset Password</button>
+    </div>
+    <p><a href="admin-login.html">Back to Login</a></p>
+  </div>
+
+  <script src="auth.js"></script>
+  <script>
+    document.getElementById('adminForgotForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const identifier = document.getElementById('usernameOrEmail').value.trim();
+      const result = await requestPasswordReset('admin', identifier);
+      if (result.success) {
+        document.getElementById('errorMsg').textContent = '';
+        document.getElementById('infoMsg').textContent = 'Reset code: ' + result.code;
+        document.getElementById('resetSection').style.display = 'block';
+      } else {
+        document.getElementById('errorMsg').textContent = result.error;
+      }
+    });
+
+    document.getElementById('resetPasswordBtn').addEventListener('click', async () => {
+      const identifier = document.getElementById('usernameOrEmail').value.trim();
+      const code = document.getElementById('resetCode').value.trim();
+      const password = document.getElementById('newPassword').value;
+      const confirmPassword = document.getElementById('confirmPassword').value;
+      if (password !== confirmPassword) {
+        document.getElementById('errorMsg').textContent = 'Passwords do not match.';
+        return;
+      }
+      const result = await resetPassword('admin', identifier, code, password);
+      if (result.success) {
+        alert('Password reset successful. Please login.');
+        window.location.href = 'admin-login.html';
+      } else {
+        document.getElementById('errorMsg').textContent = result.error;
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Menu</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Restaurant Menu</h1>
+    <div id="userHeader"></div>
+    <nav>
+      <a href="menu.html">Menu</a> |
+      <a href="order.html">Order</a> |
+      <a href="javascript:logoutCustomer()">Logout</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="menuSection" class="panel">
+      <h2>Menu Items</h2>
+      <div id="menuContainer" class="card-grid"></div>
+    </section>
+
+    <section class="panel">
+      <h2>Your Cart</h2>
+      <ul id="menuCartList" class="cart-list"></ul>
+      <button id="viewOrderButton" class="primary-btn">View Order</button>
+    </section>
+  </main>
+
+  <script src="auth.js"></script>
+  <script>
+    protectCustomerPage();
+    updateSessionInfo();
+  </script>
+  <script src="script.js"></script>
+</body>
+</html>

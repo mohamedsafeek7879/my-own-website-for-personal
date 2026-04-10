@@ -1,0 +1,20 @@
+{
+  "items": [
+    {
+      "id": 1,
+      "name": "Margherita Pizza",
+      "price": 299,
+      "description": "Cheese pizza with basil and tomato",
+      "category": "Mains",
+      "image": ""
+    },
+    {
+      "id": 2,
+      "name": "Paneer Tikka",
+      "price": 239,
+      "description": "Grilled paneer with spices",
+      "category": "Appetizers",
+      "image": ""
+    }
+  ]
+}

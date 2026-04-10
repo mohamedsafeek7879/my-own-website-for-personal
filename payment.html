@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Payment</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Payment</h1>
+    <div id="userHeader"></div>
+    <nav>
+      <a href="menu.html">Menu</a> |
+      <a href="order.html">Order</a> |
+      <a href="javascript:logoutCustomer()">Logout</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="panel">
+      <h2>Scan the QR code to pay</h2>
+      <img src="skqr.jpeg" alt="Payment QR Code" class="qr-image" />
+      <div class="panel">
+        <h3>Order Details</h3>
+        <ul id="paymentCart" class="cart-list"></ul>
+        <p>Total to Pay: ₹<span id="paymentTotal">0.00</span></p>
+        <button class="primary-btn" onclick="completeOrder()">Payment Done</button>
+      </div>
+    </section>
+  </main>
+
+  <script src="auth.js"></script>
+  <script>
+    protectCustomerPage();
+    updateSessionInfo();
+    
+    function completeOrder() {
+      alert('Thank you for your order!');
+      localStorage.removeItem('cart');
+      window.location.href = 'menu.html';
+    }
+  </script>
+  <script src="script.js"></script>
+</body>
+</html>

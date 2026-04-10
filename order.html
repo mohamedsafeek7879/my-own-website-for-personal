@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Order</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Your Order</h1>
+    <div id="userHeader"></div>
+    <nav>
+      <a href="menu.html">Menu</a> |
+      <a href="order.html">Order</a> |
+      <a href="javascript:logoutCustomer()">Logout</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="panel">
+      <h2>Order Summary</h2>
+      <ul id="cartList" class="cart-list"></ul>
+      <div id="orderTotals" class="totals">
+        <p>Subtotal: ₹<span id="subtotal">0.00</span></p>
+        <p>Tax (10%): ₹<span id="tax">0.00</span></p>
+        <p>Total: ₹<span id="total">0.00</span></p>
+      </div>
+      <button id="checkoutButton" class="primary-btn">Confirm Order</button>
+    </section>
+  </main>
+
+  <script src="auth.js"></script>
+  <script>
+    protectCustomerPage();
+    updateSessionInfo();
+  </script>
+  <script src="script.js"></script>
+</body>
+</html>

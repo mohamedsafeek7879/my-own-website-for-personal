@@ -1,0 +1,50 @@
+[
+  {
+    "token": "a37cbe75b927e05402ff180bd63031aefe2aa4056c94322f",
+    "username": "safeek",
+    "role": "customer",
+    "expiresAt": 1775837566937
+  },
+  {
+    "token": "7dad621ac8e370d30e0abfa9f8fe9ebb7703b4aa5e2389af",
+    "username": "mohamed",
+    "role": "admin",
+    "expiresAt": 1775837677462
+  },
+  {
+    "token": "017ef16ffd0d3c69f75d489bf1eb570cfaa018265e4cd4a0",
+    "username": "mohamed",
+    "role": "admin",
+    "expiresAt": 1775837683085
+  },
+  {
+    "token": "810d04ff73397fa87ac2eb7f06b80a4a418a6f8952d0b097",
+    "username": "mohamed",
+    "role": "admin",
+    "expiresAt": 1775837686190
+  },
+  {
+    "token": "257f45d537be37ea7202b01b404d9a7babe85612d6ea67f6",
+    "username": "mohamed",
+    "role": "admin",
+    "expiresAt": 1775837695198
+  },
+  {
+    "token": "7733d9abb2133e2db3271b1a665863295736856c63825262",
+    "username": "mohameds",
+    "role": "admin",
+    "expiresAt": 1775837755372
+  },
+  {
+    "token": "5f64ad09942ccfab773233e172b58a19164896315114c518",
+    "username": "mohameds",
+    "role": "admin",
+    "expiresAt": 1775837762089
+  },
+  {
+    "token": "9513f367f6197d1a143555958e0c8e3e6c5d6117ce0ab2b9",
+    "username": "mohameds",
+    "role": "admin",
+    "expiresAt": 1775837774394
+  }
+]

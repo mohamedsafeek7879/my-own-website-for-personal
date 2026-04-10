@@ -1,20 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>safeek personal</title>
-    <link rel="stylesheet" href="style.css">
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Restaurant - Login</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .login-container {
+      max-width: 400px;
+      margin: 100px auto;
+      text-align: center;
+    }
+    .login-btn {
+      margin: 10px;
+      padding: 15px 30px;
+      font-size: 1.1em;
+    }
+  </style>
 </head>
 <body>
-    <h1>
-        i am creating a website
-    </h1>
-    <p>
-        for my own purpose
-    </p>
-    <p>i'm just deploy my project into the internet</p>
-    <img src="skqr.jpeg" width="300px" alt="">
+  <div class="login-container">
+    <h1>Welcome to Restaurant</h1>
+    <p>Choose your login type:</p>
+    <button class="login-btn primary-btn" onclick="window.location.href='customer-login.html'">Customer Login</button>
+    <button class="login-btn danger-btn" onclick="window.location.href='admin-login.html'">Admin Login</button>
+  </div>
 </body>
 </html>

@@ -1,0 +1,24 @@
+{
+  "customer": [
+    {
+      "id": 1775835759821,
+      "username": "safeek",
+      "email": "mohamedsafeekavc@gmail.com",
+      "password": "a8804850dee8dc48cd200c8b78ea808768606fc5f553f36fb7f4da6bc424eddb"
+    }
+  ],
+  "admin": [
+    {
+      "id": 1775835870816,
+      "username": "mohamed",
+      "email": "lordcobraoffical@gmail.com",
+      "password": "5994471abb01112afcc18159f6cc74b4f511b99806da59b3caf5a9c173cacfc5"
+    },
+    {
+      "id": 1775835950265,
+      "username": "mohameds",
+      "email": "safeeknew51@gmail.com",
+      "password": "aea27ad297988629c3fb643b30a78a87de4cc16ec970e55d6d57924fabd42a93"
+    }
+  ]
+}

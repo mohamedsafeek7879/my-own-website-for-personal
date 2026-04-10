@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Customer Sign Up</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="auth-box">
+    <h1>Customer Sign Up</h1>
+    <div id="errorMsg" class="error"></div>
+    <form id="customerSignupForm">
+      <input type="text" id="username" placeholder="Username" required />
+      <input type="email" id="email" placeholder="Email" required />
+      <input type="password" id="password" placeholder="Password" required />
+      <input type="password" id="confirmPassword" placeholder="Confirm Password" required />
+      <button class="primary-btn" type="submit">Create Account</button>
+    </form>
+    <p><a href="customer-login.html">Already have an account?</a></p>
+  </div>
+
+  <script src="auth.js"></script>
+  <script>
+    document.getElementById('customerSignupForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const username = document.getElementById('username').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const password = document.getElementById('password').value;
+      const confirmPassword = document.getElementById('confirmPassword').value;
+      if (password !== confirmPassword) {
+        document.getElementById('errorMsg').textContent = 'Passwords do not match.';
+        return;
+      }
+      const result = await registerUser('customer', username, email, password);
+      if (result.success) {
+        alert('Customer account created. Please login.');
+        window.location.href = 'customer-login.html';
+      } else {
+        document.getElementById('errorMsg').textContent = result.error;
+      }
+    });
+  </script>
+</body>
+</html>
