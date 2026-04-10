@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Admin Panel</h1>
+    <div id="userHeader"></div>
+    <nav>
+      <a href="admin.html">Dashboard</a> |
+      <a href="javascript:logoutAdmin()">Logout</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="panel">
+      <h2>Manage Menu Items</h2>
+      <form id="itemForm">
+        <input type="text" id="name" placeholder="Item Name" required />
+        <input type="number" id="price" placeholder="Price" step="0.01" required />
+        <input type="text" id="description" placeholder="Description" />
+        <select id="category">
+          <option value="Appetizers">Appetizers</option>
+          <option value="Mains">Mains</option>
+          <option value="Desserts">Desserts</option>
+          <option value="Beverages">Beverages</option>
+        </select>
+        <input type="text" id="image" placeholder="Image filename (e.g. pizza.jpg)" />
+        <button type="submit" id="saveBtn">Add Item</button>
+      </form>
+
+      <button id="clearAll" class="danger-btn">Clear All Items</button>
+
+      <ul id="adminList" class="cart-list"></ul>
+    </section>
+  </main>
+
+  <script src="auth.js"></script>
+  <script>
+    protectAdminPage();
+    updateSessionInfo();
+  </script>
+  <script src="admin.js"></script>
+</body>
+</html>
